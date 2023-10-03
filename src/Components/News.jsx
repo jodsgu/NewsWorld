@@ -13,7 +13,7 @@ const News = (props) => {
   const fetchData = async (pageNumber) => {
     try {
 
-      const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apiKey}&page=${pageNumber}&pageSize=${props.pageSize}`);
+      const res = await axios.get(`/news-api/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apiKey}&page=${pageNumber}&pageSize=${props.pageSize}`);
       if (res.data.status) {
         if (pageNumber === 1) {
           // If it's the first page, set articles directly
